@@ -1,13 +1,340 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeGlow – For The Self-Hosted Family</title>
+    <link rel="icon" href="https://homeglow.dev/wp-content/uploads/2026/03/cropped-HomeGlowLogo-32x32.png" sizes="32x32">
+    <!-- Tailwind CSS v4 Standalone -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .selection\:bg-indigo-100::selection { background-color: #e0e7ff; }
+        .selection\:text-indigo-900::selection { color: #1e1b4b; }
+    </style>
+</head>
+<body class="min-h-screen bg-zinc-50 text-zinc-900 selection:bg-indigo-100 selection:text-indigo-900">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="https://homeglow.dev/wp-content/uploads/2026/03/cropped-HomeGlowLogo-170x134.png" alt="HomeGlow Logo" class="h-8 w-auto" referrerpolicy="no-referrer">
+                <span class="font-semibold text-xl tracking-tight">HomeGlow</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/jherforth/HomeGlow" target="_blank" rel="noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-medium">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                    <span class="hidden sm:inline">GitHub</span>
+                </a>
+                <a href="https://discord.gg/3UPF7njkeD" target="_blank" rel="noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-medium">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    <span class="hidden sm:inline">Discord</span>
+                </a>
+                <a href="https://demo.homeglow.dev" target="_blank" rel="noreferrer" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Try Demo</a>
+            </div>
+        </div>
+    </nav>
 
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-32 overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/abstract-light/1920/1080?blur=10')] opacity-20 bg-cover bg-center"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-50"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 mb-6">
+                    The free alternative for the <br class="hidden md:block">
+                    <span class="text-indigo-600">self-hosted family.</span>
+                </h1>
+                <p class="text-xl text-zinc-600 max-w-2xl mx-auto mb-10">
+                    Your family fully organized. A smart calendar board that's always free, open source, and community developed.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://demo.homeglow.dev" target="_blank" rel="noreferrer" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors flex items-center justify-center gap-2 shadow-lg shadow-indigo-200">
+                        Try The Demo <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://github.com/jherforth/HomeGlow" target="_blank" rel="noreferrer" class="w-full sm:w-auto bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-200 px-8 py-4 rounded-xl text-lg font-medium transition-colors flex items-center justify-center gap-2 shadow-sm">
+                        <i data-lucide="github" class="w-5 h-5"></i> View Source
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Everything you need in one place</h2>
+                    <p class="mt-4 text-lg text-zinc-600">Customizable widgets to help manage your home.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-blue-100 text-blue-600">
+                            <i data-lucide="calendar" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Calendar</h3>
+                        <p class="text-zinc-600 leading-relaxed">Supports ICS and CalDAV. Multiple calendars in one place.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-amber-100 text-amber-600">
+                            <i data-lucide="cloud-sun" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Weather</h3>
+                        <p class="text-zinc-600 leading-relaxed">Always be ready for the day’s weather at a glance.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-emerald-100 text-emerald-600">
+                            <i data-lucide="image" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Photos</h3>
+                        <p class="text-zinc-600 leading-relaxed">Add multiple albums and share all of your memories.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-zinc-50 border border-zinc-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-purple-100 text-purple-600">
+                            <i data-lucide="check-square" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Chores</h3>
+                        <p class="text-zinc-600 leading-relaxed">All of your chores and tasks in one place, for the whole family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why HomeGlow -->
+        <section class="py-24 bg-zinc-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Why HomeGlow?</h2>
+                        <p class="text-lg text-zinc-400 mb-8">
+                            The idea was simple: with so many options currently available that require a monthly fee, we hoped to provide a comparable, or better experience, for families willing to manage their own smart board experience.
+                        </p>
+                        <div class="space-y-8">
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                                        <i data-lucide="server" class="w-5 h-5"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Always Free</h3>
+                                    <p class="text-zinc-400 leading-relaxed">The only investment you need to make is in time and hardware. Enjoy a smart board in no time by deploying HomeGlow in Docker.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                                        <i data-lucide="code" class="w-5 h-5"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Open Source</h3>
+                                    <p class="text-zinc-400 leading-relaxed">A completely open project that hopes to continue to build onto an already great smart board platform.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                                        <i data-lucide="users" class="w-5 h-5"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Community Developed</h3>
+                                    <p class="text-zinc-400 leading-relaxed">Not only is the application open source, but with a small, but growing, plugin database, we look forward to seeing what you build!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="aspect-square rounded-3xl overflow-hidden bg-zinc-800 border border-zinc-700 shadow-2xl relative">
+                            <img src="https://picsum.photos/seed/family-board/800/800" alt="Family Smart Board" class="w-full h-full object-cover opacity-80 mix-blend-overlay" referrerpolicy="no-referrer">
+                            <div class="absolute inset-0 flex items-center justify-center flex-col p-8 text-center">
+                                <img src="https://homeglow.dev/wp-content/uploads/2026/03/cropped-HomeGlowLogo-170x134.png" alt="HomeGlow Logo" class="w-32 h-auto mb-6 drop-shadow-lg" referrerpolicy="no-referrer">
+                                <p class="text-2xl font-medium text-white drop-shadow-md">Your data stays in your home, on your network.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="py-24 bg-zinc-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">How we compare</h2>
+                    <p class="mt-4 text-lg text-zinc-600">See why families are choosing HomeGlow over expensive alternatives.</p>
+                </div>
+
+                <div class="overflow-x-auto pb-8">
+                    <div class="min-w-[800px] bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-zinc-200 bg-zinc-50/50">
+                                    <th class="p-6 font-semibold text-zinc-500 w-1/5">Features</th>
+                                    <th class="p-6 font-bold text-xl text-indigo-600 w-1/5 bg-indigo-50/30">HomeGlow</th>
+                                    <th class="p-6 font-semibold text-zinc-900 w-1/5">Skylight</th>
+                                    <th class="p-6 font-semibold text-zinc-900 w-1/5">Hearth</th>
+                                    <th class="p-6 font-semibold text-zinc-900 w-1/5">Cozyla</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-zinc-100">
+                                <tr>
+                                    <td class="p-6 font-medium text-zinc-900">Price</td>
+                                    <td class="p-6 bg-indigo-50/30">
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold">$0 / forever</span>
+                                        <div class="text-sm text-zinc-500 mt-2">Bring your own hardware</div>
+                                    </td>
+                                    <td class="p-6 text-zinc-600">
+                                        <div class="font-medium text-zinc-900">$599.99</div>
+                                        <div class="text-sm">+ $79/year premium</div>
+                                    </td>
+                                    <td class="p-6 text-zinc-600">
+                                        <div class="font-medium text-zinc-900">$699.00</div>
+                                        <div class="text-sm">+ $86.40/year premium</div>
+                                    </td>
+                                    <td class="p-6 text-zinc-600">
+                                        <div class="font-medium text-zinc-900">$499–$649</div>
+                                        <div class="text-sm">+ $5/month premium</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-medium text-zinc-900">Customization</td>
+                                    <td class="p-6 bg-indigo-50/30 font-medium text-zinc-900">High</td>
+                                    <td class="p-6 text-zinc-600">Low</td>
+                                    <td class="p-6 text-zinc-600">Moderate</td>
+                                    <td class="p-6 text-zinc-600">High</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-medium text-zinc-900">Screen Size</td>
+                                    <td class="p-6 bg-indigo-50/30 text-zinc-900">You decide (Tablets to Monitors)</td>
+                                    <td class="p-6 text-zinc-600">15″ or 27″</td>
+                                    <td class="p-6 text-zinc-600">27″</td>
+                                    <td class="p-6 text-zinc-600">15.6″, 24″, or 32″</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-medium text-zinc-900">Key Features</td>
+                                    <td class="p-6 bg-indigo-50/30">
+                                        <ul class="space-y-2 text-sm text-zinc-700">
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i> Free chore reward system</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i> Free community plugins</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i> Drag-and-Drop UI</li>
+                                        </ul>
+                                    </td>
+                                    <td class="p-6">
+                                        <ul class="space-y-2 text-sm text-zinc-600">
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> AI Magic Import</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> Chores (Premium only)</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> Meal planning</li>
+                                        </ul>
+                                    </td>
+                                    <td class="p-6">
+                                        <ul class="space-y-2 text-sm text-zinc-600">
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> Family profiles</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> Interactive chore charts</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> Drag-and-drop scheduling</li>
+                                        </ul>
+                                    </td>
+                                    <td class="p-6">
+                                        <ul class="space-y-2 text-sm text-zinc-600">
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> All-in-one hub</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> Split-screen mode</li>
+                                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-zinc-400 mt-0.5 shrink-0"></i> Voice control</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="support" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Help and Support</h2>
+                    <p class="mt-4 text-lg text-zinc-600">Need help or want to get involved? We're here for you.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-zinc-50 border border-zinc-100 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center mb-6 shadow-lg shadow-indigo-100">
+                            <i data-lucide="github" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900 mb-3">Get Involved</h3>
+                        <p class="text-zinc-600 mb-8 leading-relaxed">We’re always looking for fresh ideas! If you found an issue or want to contribute, head over to GitHub.</p>
+                        <a href="https://github.com/jherforth/HomeGlow" target="_blank" rel="noreferrer" class="mt-auto inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">
+                            GitHub Repository <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-zinc-50 border border-zinc-100 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center mb-6 shadow-lg shadow-indigo-100">
+                            <i data-lucide="book-open" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900 mb-3">Documentation</h3>
+                        <p class="text-zinc-600 mb-8 leading-relaxed">Our application is young and we need help filling out the Wiki. Found a solution? Share it with others.</p>
+                        <a href="https://github.com/jherforth/HomeGlow/wiki" target="_blank" rel="noreferrer" class="mt-auto inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">
+                            View Wiki <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-zinc-50 border border-zinc-100 flex flex-col items-center text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center mb-6 shadow-lg shadow-indigo-100">
+                            <i data-lucide="message-circle" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900 mb-3">Immediate Help</h3>
+                        <p class="text-zinc-600 mb-8 leading-relaxed">Need immediate help from the community? Join our Discord and see if other users can help you through.</p>
+                        <a href="https://discord.gg/3UPF7njkeD" target="_blank" rel="noreferrer" class="mt-auto inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors">
+                            Join Discord <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-white border-t border-zinc-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl mb-6">Ready to organize your family?</h2>
+                <p class="text-lg text-zinc-600 mb-10">Run it from an old PC or a Raspberry Pi, you can be up and running in no time. HomeGlow supports touchscreens and tablets too!</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://demo.homeglow.dev" target="_blank" rel="noreferrer" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-medium transition-colors shadow-lg shadow-indigo-200">Try The Demo</a>
+                    <a href="https://github.com/jherforth/HomeGlow" target="_blank" rel="noreferrer" class="w-full sm:w-auto bg-zinc-100 hover:bg-zinc-200 text-zinc-900 px-8 py-4 rounded-xl text-lg font-medium transition-colors">View Documentation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-50 border-t border-zinc-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="https://homeglow.dev/wp-content/uploads/2026/03/cropped-HomeGlowLogo-170x134.png" alt="HomeGlow Logo" class="h-6 w-auto grayscale opacity-50" referrerpolicy="no-referrer">
+                <span class="text-zinc-500 font-medium">© 2026 HomeGlow</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/jherforth/HomeGlow" target="_blank" rel="noreferrer" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                    <span class="sr-only">GitHub</span>
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://discord.gg/3UPF7njkeD" target="_blank" rel="noreferrer" class="text-zinc-400 hover:text-zinc-900 transition-colors">
+                    <span class="sr-only">Discord</span>
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
