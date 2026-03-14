@@ -15,7 +15,9 @@ import {
   ChevronRight,
   ExternalLink,
   Menu,
-  X
+  X,
+  Check,
+  X as XIcon
 } from 'lucide-react';
 
 // --- Pseudo-Preview Component (Inspired by the attached image) ---
@@ -414,6 +416,111 @@ const App = () => {
                   </div>
                 </motion.div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Section */}
+        <section className="py-32 bg-zinc-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <h2 className="text-blue-800 font-bold tracking-widest uppercase text-sm mb-4">The Comparison</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">HomeGlow vs. Skylight, Hearth, and Cozyla.</h3>
+              <p className="text-lg text-zinc-600">See why HomeGlow is the best free, self-hosted alternative to expensive smart boards like Skylight Calendar, Hearth Display, and Cozyla.</p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse min-w-[800px]">
+                <thead>
+                  <tr className="border-b-2 border-zinc-200">
+                    <th className="py-6 px-4 text-left text-zinc-400 font-bold uppercase text-xs tracking-widest">Feature</th>
+                    <th className="py-6 px-4 text-center text-zinc-900 font-bold text-lg bg-blue-50/50 rounded-t-2xl">HomeGlow</th>
+                    <th className="py-6 px-4 text-center text-zinc-400 font-medium text-lg italic">Skylight</th>
+                    <th className="py-6 px-4 text-center text-zinc-400 font-medium text-lg italic">Hearth</th>
+                    <th className="py-6 px-4 text-center text-zinc-400 font-medium text-lg italic">Cozyla</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-200">
+                  {[
+                    { 
+                      name: 'Upfront Cost', 
+                      home: '$0 (BYO Device)', 
+                      skylight: '$159 - $299', 
+                      hearth: '$599', 
+                      cozyla: '$269 - $399',
+                      highlight: true 
+                    },
+                    { 
+                      name: 'Annual Subscription', 
+                      home: '$0 (Forever)', 
+                      skylight: '$39/yr', 
+                      hearth: '$108/yr', 
+                      cozyla: '$0 - $30/yr',
+                      highlight: true 
+                    },
+                    { 
+                      name: 'Data Privacy', 
+                      home: '100% Local', 
+                      skylight: 'Cloud Storage', 
+                      hearth: 'Cloud Storage', 
+                      cozyla: 'Cloud Storage',
+                      highlight: true 
+                    },
+                    { 
+                      name: 'Hardware Support', 
+                      home: 'Any Screen/Tablet', 
+                      skylight: 'Proprietary', 
+                      hearth: 'Proprietary', 
+                      cozyla: 'Proprietary',
+                      highlight: false 
+                    },
+                    { 
+                      name: 'Open Source', 
+                      home: 'Yes (MIT)', 
+                      skylight: 'Closed Source', 
+                      hearth: 'Closed Source', 
+                      cozyla: 'Closed Source',
+                      highlight: false 
+                    },
+                    { 
+                      name: 'Custom Widgets', 
+                      home: 'Unlimited', 
+                      skylight: 'Limited', 
+                      hearth: 'Locked', 
+                      cozyla: 'Limited',
+                      highlight: false 
+                    }
+                  ].map((row) => (
+                    <tr key={row.name} className="group hover:bg-white transition-colors">
+                      <td className="py-6 px-4 text-zinc-900 font-bold">{row.name}</td>
+                      <td className="py-6 px-4 text-center bg-blue-50/30">
+                        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${row.highlight ? 'bg-blue-800 text-white' : 'bg-zinc-200 text-zinc-900'} font-bold text-sm`}>
+                          {row.home.includes('Local') || row.home.includes('Yes') || row.home.includes('Unlimited') ? <Check className="w-4 h-4" /> : null}
+                          {row.home}
+                        </div>
+                      </td>
+                      <td className="py-6 px-4 text-center text-zinc-500 font-medium">
+                        <div className="flex flex-col items-center gap-1">
+                          {row.skylight.includes('Cloud') || row.skylight.includes('Closed') || row.skylight.includes('Proprietary') ? <XIcon className="w-4 h-4 text-zinc-300" /> : null}
+                          {row.skylight}
+                        </div>
+                      </td>
+                      <td className="py-6 px-4 text-center text-zinc-500 font-medium">
+                        <div className="flex flex-col items-center gap-1">
+                          {row.hearth.includes('Cloud') || row.hearth.includes('Closed') || row.hearth.includes('Proprietary') ? <XIcon className="w-4 h-4 text-zinc-300" /> : null}
+                          {row.hearth}
+                        </div>
+                      </td>
+                      <td className="py-6 px-4 text-center text-zinc-500 font-medium">
+                        <div className="flex flex-col items-center gap-1">
+                          {row.cozyla.includes('Cloud') || row.cozyla.includes('Closed') || row.cozyla.includes('Proprietary') ? <XIcon className="w-4 h-4 text-zinc-300" /> : null}
+                          {row.cozyla}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
