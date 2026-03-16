@@ -134,7 +134,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="https://homeglow.dev/wp-content/uploads/2026/03/cropped-HomeGlowLogo-170x134.png" 
+              src="assets/cropped-HomeGlowLogo-170x134.png" 
               alt="HomeGlow Logo" 
               className="h-8 w-auto"
               referrerPolicy="no-referrer"
@@ -597,7 +597,7 @@ const App = () => {
                 rel="noreferrer"
                 className="w-full sm:w-auto bg-white text-blue-900 px-10 py-5 rounded-2xl text-xl font-bold hover:bg-blue-50 transition-all shadow-2xl shadow-black/20 active:scale-95"
               >
-                Try The Demo
+                Try the demo
               </a>
               <a 
                 href="https://github.com/jherforth/HomeGlow" 
@@ -605,7 +605,7 @@ const App = () => {
                 rel="noreferrer"
                 className="w-full sm:w-auto bg-blue-800 text-white border border-blue-800 px-10 py-5 rounded-2xl text-xl font-bold hover:bg-blue-800 transition-all flex items-center justify-center gap-2"
               >
-                View Documentation <ExternalLink className="w-5 h-5" />
+                View documentation <ExternalLink className="w-5 h-5" />
               </a>
             </div>
           </div>
