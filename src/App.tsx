@@ -476,7 +476,7 @@ const App = () => {
                     },
                     { 
                       name: 'Open Source', 
-                      home: 'Yes (MIT)', 
+                      home: 'Yes (AGPLv3)', 
                       skylight: 'Closed Source', 
                       hearth: 'Closed Source', 
                       cozyla: 'Closed Source',
@@ -632,7 +632,7 @@ const App = () => {
             </div>
 
             <p className="text-zinc-400 text-sm font-medium">
-              © 2026 HomeGlow Project. Open Source under MIT.
+              © 2026 HomeGlow Project. Open Source under AGPLv3.
             </p>
           </div>
         </div>
