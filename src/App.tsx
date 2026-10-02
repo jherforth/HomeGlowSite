@@ -397,7 +397,7 @@ const App = () => {
                   initial={{ rotate: 5, scale: 0.9 }}
                   whileInView={{ rotate: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  className="aspect-square rounded-[3rem] bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 p-1 shadow-2xl"
+                  className="min-h-[32rem] lg:aspect-square rounded-[3rem] bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 p-1 shadow-2xl"
                 >
                   <div className="w-full h-full rounded-[2.9rem] bg-zinc-900 overflow-hidden flex items-center justify-center p-12 text-center">
                     <div>
@@ -411,6 +411,10 @@ const App = () => {
                       <p className="text-zinc-500">Deploy in seconds with Docker.</p>
                       <div className="mt-10 p-4 bg-zinc-800 rounded-2xl font-mono text-sm text-yellow-400 border border-zinc-700">
                         docker pull jherforth/homeglow:latest
+                      </div>
+                      <p className="text-zinc-500 mt-8">Deploy a container with Proxmox.</p>
+                      <div className="mt-4 p-4 bg-zinc-800 rounded-2xl font-mono text-xs text-yellow-400 border border-zinc-700 text-left break-all select-all">
+                        bash -c "$(curl -fsSL https://raw.githubusercontent.com/jherforth/HomeGlow/main/proxmox/install-homeglow.sh)"
                       </div>
                     </div>
                   </div>
