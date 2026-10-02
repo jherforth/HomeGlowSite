@@ -1,20 +1,45 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# HomeGlow Landing Page
 
-# Run and deploy your AI Studio app
+The marketing site for [HomeGlow](https://github.com/jherforth/HomeGlow), a free, open source, self-hosted smart calendar board and alternative to Skylight, Hearth, and Cozyla.
 
-This contains everything you need to run your app locally.
+Built with Vite, React 19, Tailwind CSS 4, and Motion. It builds to a fully static site.
 
-View your app in AI Studio: https://ai.studio/apps/83be3cf5-ec2d-4a5d-add7-af2c24b2d092
+## Local development
 
-## Run Locally
+Requires Node.js 22+.
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run lint     # type-check
+npm run build    # outputs to dist/
+npm run preview  # serve the production build
+```
 
+## Deploy with Coolify
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The repo includes a multi-stage `Dockerfile` (Node build, nginx serve) so Coolify can build it directly.
+
+1. In Coolify, create a new resource and choose **Public/Private Repository**.
+2. Select this repository and the `main` branch.
+3. Set **Build Pack** to **Dockerfile**.
+4. Set **Ports Exposes** to `80`.
+5. Add your domain and deploy. Enable auto-deploy to rebuild on every push.
+
+No environment variables are required.
+
+### Without Docker
+
+Alternatively, use the **Nixpacks** build pack with **Static Site** enabled, build command `npm run build`, and publish directory `dist`. For SPA routing, enable the single-page-app option.
+
+## Run with Docker locally
+
+```bash
+docker build -t homeglow-site .
+docker run --rm -p 8080:80 homeglow-site
+```
+
+## Installing HomeGlow itself
+
+- Docker: `docker pull jherforth/homeglow:latest`
+- Proxmox: `bash -c "$(curl -fsSL https://raw.githubusercontent.com/jherforth/HomeGlow/main/proxmox/install-homeglow.sh)"`
