@@ -134,7 +134,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="assets/cropped-HomeGlowLogo-170x134.png" 
+              src="/HomeGlowLogo.svg" 
               alt="HomeGlow Logo" 
               className="h-8 w-auto"
               referrerPolicy="no-referrer"
@@ -402,7 +402,7 @@ const App = () => {
                   <div className="w-full h-full rounded-[2.9rem] bg-zinc-900 overflow-hidden flex items-center justify-center p-12 text-center">
                     <div>
                       <img 
-                        src="https://homeglow.dev/wp-content/uploads/2026/03/cropped-HomeGlowLogo-170x134.png" 
+                        src="/HomeGlowLogo.svg" 
                         className="w-32 h-auto mx-auto mb-8 grayscale invert opacity-80" 
                         alt="Logo"
                         referrerPolicy="no-referrer"
@@ -622,7 +622,7 @@ const App = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-3">
               <img 
-                src="https://homeglow.dev/wp-content/uploads/2026/03/cropped-HomeGlowLogo-170x134.png" 
+                src="/HomeGlowLogo.svg" 
                 className="h-8 w-auto grayscale opacity-40" 
                 alt="Logo"
                 referrerPolicy="no-referrer"
