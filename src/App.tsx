@@ -518,7 +518,7 @@ const App = () => {
                   {[
                     { 
                       name: 'Upfront Cost', 
-                      home: '$0 (Upcycled PC)', 
+                      home: '$0 (Recycled PC)', 
                       skylight: '$249 - $599', 
                       hearth: '$699', 
                       cozyla: '$179 - $899',
@@ -596,6 +596,10 @@ const App = () => {
                 </tbody>
               </table>
             </div>
+
+            <p className="mt-10 text-center text-zinc-500 italic max-w-2xl mx-auto">
+              If HomeGlow doesn't work out for you, you're not out any up-front cost, only a bit of your time. And if you do go with one of the others, we're glad you're supporting companies that pay the people who support their families, too.
+            </p>
           </div>
         </section>
 
