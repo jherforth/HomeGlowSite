@@ -662,7 +662,7 @@ const App = () => {
               Ready to take control of <br /> your family's schedule?
             </h2>
             <p className="text-xl text-blue-100 mb-12 leading-relaxed">
-              Join hundreds of families who have ditched the subscriptions and embraced the freedom of self-hosting.
+              Join a growing number of families who have ditched the subscriptions and embraced the freedom of self-hosting.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a 
