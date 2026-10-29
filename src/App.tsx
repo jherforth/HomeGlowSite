@@ -500,7 +500,7 @@ const App = () => {
             <div className="text-center max-w-3xl mx-auto mb-20">
               <h2 className="text-blue-800 font-bold tracking-widest uppercase text-sm mb-4">The Comparison</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">HomeGlow vs. Skylight, Hearth, and Cozyla.</h3>
-              <p className="text-lg text-zinc-600">See why HomeGlow is the best free, self-hosted alternative to expensive smart boards like Skylight Calendar, Hearth Display, and Cozyla.</p>
+              <p className="text-lg text-zinc-600">Drag out that old PC that has been sitting in the closet and see why HomeGlow is the best free, self-hosted alternative to expensive smart boards like Skylight Calendar, Hearth Display, and Cozyla.</p>
             </div>
 
             <div className="overflow-x-auto">
@@ -518,10 +518,10 @@ const App = () => {
                   {[
                     { 
                       name: 'Upfront Cost', 
-                      home: '$0 (BYO Device)', 
-                      skylight: '$159 - $299', 
-                      hearth: '$599', 
-                      cozyla: '$269 - $399',
+                      home: '$0 (Upcycled PC)', 
+                      skylight: '$249 - $599', 
+                      hearth: '$699', 
+                      cozyla: '$179 - $899',
                       highlight: true 
                     },
                     { 
