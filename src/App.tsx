@@ -413,7 +413,7 @@ const App = () => {
             </div>
 
             <p className="mt-12 text-center text-zinc-500 max-w-2xl mx-auto">
-              Nothing to install on the devices you view it on, and no app store required. Your data stays on your own server.
+              Nothing to install on the devices you view it on, and no app store required. You can even have multiple screens throughout the house with different dashboard setups!
             </p>
           </div>
         </section>
@@ -527,9 +527,9 @@ const App = () => {
                     { 
                       name: 'Annual Subscription', 
                       home: '$0 (Forever)', 
-                      skylight: '$39/yr', 
+                      skylight: '$79/yr', 
                       hearth: '$108/yr', 
-                      cozyla: '$0 - $30/yr',
+                      cozyla: '$0 - $80/yr',
                       highlight: true 
                     },
                     { 
