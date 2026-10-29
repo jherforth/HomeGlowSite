@@ -359,7 +359,7 @@ const App = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-20">
               <h2 className="text-blue-800 font-bold tracking-widest uppercase text-sm mb-4">How It Works</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">Install once. View anywhere.</h3>
+              <h3 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">Install once. View locally.</h3>
               <p className="text-lg text-zinc-600">HomeGlow isn't an app you download to your phone. It runs as a server on a computer in your home, and you open it in a web browser on any device.</p>
             </div>
 
