@@ -358,7 +358,7 @@ const App = () => {
                 <h2 className="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-4">The Philosophy</h2>
                 <h3 className="text-4xl md:text-5xl font-bold mb-8">Why we built HomeGlow.</h3>
                 <p className="text-xl text-zinc-400 mb-12 leading-relaxed">
-                  We were tired of "smart" products that required $80/year subscriptions just to show a calendar. HomeGlow is our answer: a professional-grade experience that respects your wallet and your privacy.
+                  We're a group of tech enthusiasts tired of "smart" products that reel you in with big promies and fun features, only to discover an $80/year subscription to unlock them. HomeGlow is our answer: a full featured family hub that respects your wallet and your privacy.
                 </p>
                 
                 <div className="space-y-10">
