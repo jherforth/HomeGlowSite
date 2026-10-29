@@ -17,7 +17,11 @@ import {
   Menu,
   X,
   Check,
-  X as XIcon
+  X as XIcon,
+  Wifi,
+  Tablet,
+  Smartphone,
+  Monitor
 } from 'lucide-react';
 
 // --- Pseudo-Preview Component (Inspired by the attached image) ---
@@ -145,6 +149,7 @@ const App = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm font-medium text-zinc-600 hover:text-blue-800 transition-colors">Features</a>
+            <a href="#how-it-works" className="text-sm font-medium text-zinc-600 hover:text-blue-800 transition-colors">How It Works</a>
             <a href="#why" className="text-sm font-medium text-zinc-600 hover:text-blue-800 transition-colors">Why HomeGlow</a>
             <a href="#support" className="text-sm font-medium text-zinc-600 hover:text-blue-800 transition-colors">Support</a>
             <div className="h-4 w-px bg-zinc-200" />
@@ -186,6 +191,7 @@ const App = () => {
             >
               <div className="px-4 py-6 flex flex-col gap-4">
                 <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-zinc-900">Features</a>
+                <a href="#how-it-works" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-zinc-900">How It Works</a>
                 <a href="#why" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-zinc-900">Why HomeGlow</a>
                 <a href="#support" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-zinc-900">Support</a>
                 <a href="https://demo.homeglow.dev" className="w-full bg-blue-800 text-white py-3 rounded-xl text-center font-bold">Try Demo</a>
@@ -345,6 +351,70 @@ const App = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section id="how-it-works" className="py-32 bg-zinc-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <h2 className="text-blue-800 font-bold tracking-widest uppercase text-sm mb-4">How It Works</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">Install once. View anywhere.</h3>
+              <p className="text-lg text-zinc-600">HomeGlow isn't an app you download to your phone. It runs as a server on a computer in your home, and you open it in a web browser on any device.</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-10">
+              {/* Step 1: Server */}
+              <div className="p-8 rounded-3xl bg-white border border-zinc-200 shadow-sm text-center">
+                <span className="inline-block px-3 py-1 rounded-full bg-blue-800 text-white text-xs font-bold tracking-widest uppercase mb-6">Step 1</span>
+                <div className="w-20 h-20 rounded-3xl bg-blue-50 text-blue-800 flex items-center justify-center mx-auto mb-6">
+                  <Server className="w-10 h-10" />
+                </div>
+                <h4 className="text-2xl font-bold text-zinc-900 mb-3">Install it on a computer</h4>
+                <p className="text-zinc-600 leading-relaxed mb-6">Run HomeGlow on something that stays on at home. It acts as the server that stores your calendars, chores, and photos.</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {['Docker', 'Proxmox', 'Mini PC', 'Raspberry Pi', 'NAS'].map(tag => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-medium">{tag}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Connector */}
+              <div className="flex lg:flex-col items-center justify-center gap-3 text-blue-800">
+                <div className="w-14 h-14 rounded-full bg-blue-800 text-white flex items-center justify-center shadow-lg shadow-blue-800/20">
+                  <Wifi className="w-7 h-7" />
+                </div>
+                <div className="text-center">
+                  <p className="font-bold text-zinc-900 text-sm">Your home network</p>
+                  <p className="text-xs text-zinc-500">Wi-Fi or Ethernet</p>
+                </div>
+                <ArrowRight className="w-6 h-6 hidden lg:block" />
+                <ChevronRight className="w-6 h-6 rotate-90 lg:hidden" />
+              </div>
+
+              {/* Step 2: Clients */}
+              <div className="p-8 rounded-3xl bg-white border border-zinc-200 shadow-sm text-center">
+                <span className="inline-block px-3 py-1 rounded-full bg-yellow-400 text-zinc-900 text-xs font-bold tracking-widest uppercase mb-6">Step 2</span>
+                <div className="flex justify-center gap-4 mb-6">
+                  {[Tablet, Smartphone, Monitor].map((Icon, i) => (
+                    <div key={i} className="w-20 h-20 rounded-3xl bg-amber-50 text-amber-600 flex items-center justify-center">
+                      <Icon className="w-10 h-10" />
+                    </div>
+                  ))}
+                </div>
+                <h4 className="text-2xl font-bold text-zinc-900 mb-3">View it on any device</h4>
+                <p className="text-zinc-600 leading-relaxed mb-6">Open your server's address in a browser on a tablet, phone, or PC. Mount a tablet on the wall and it becomes your family board.</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {['Wall tablet', 'Phone', 'Laptop', 'Old monitor'].map(tag => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-medium">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-12 text-center text-zinc-500 max-w-2xl mx-auto">
+              Nothing to install on the devices you view it on, and no app store required. Your data stays on your own server.
+            </p>
           </div>
         </section>
 
